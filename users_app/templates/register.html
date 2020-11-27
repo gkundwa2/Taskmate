@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+ {% block title %}
+    <title>Register- Taskmake</title>
+{% endblock title %}
+
+
+{% block content %}
+    <div class = "container">
+    </br>
+        <h2> Register a family In The DataBase </h2>
+
+        {% comment %} notification buttoons  {% endcomment %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>  
+                </div>
+
+            {% endfor %} 
+        {% endif %} 
+        <form method="POST" class="mt-5 col-6">
+
+            {% csrf_token %}
+
+            {{ register_form | crispy }}
+        <button class="btn btn-danger mb-5" type="submit">Register</button>
+        </form>
+        
+    </div>
+{% endblock content %}  

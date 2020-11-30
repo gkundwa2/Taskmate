@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'todolist_app',
     'users_app' ,
     'crispy_forms',
+    'herokuapp',
     
 ]
 
